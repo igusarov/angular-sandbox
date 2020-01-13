@@ -1,2 +1,15 @@
-<div>hello world!</div>
+<div (click)="changeFooter()">{{test}}</div>
+<div class="active" appBackground="red">
+  <app-footer #footerRef [bar]="test" [foo]="title">trololo</app-footer>
+</div>
+<div appBackground="blue" (click)="addComponent()">
+  add component
+</div>
+<div appBackground="yellow" #dcPoint></div>
+<div appBackground="green">test backgrond directive</div>
+<div *appMyStructural="let item of items; let i = index; let a = doubleIndex">{{i}} {{a}} {{item}} structural directive</div>
+
+<ng-template #refToTemplate let-vasya="end">hello world {{vasya}}</ng-template>
+<ng-template *ngTemplateOutlet="refToTemplate; context: {end: 'perfect world!'}"></ng-template>
+
 <router-outlet></router-outlet>
