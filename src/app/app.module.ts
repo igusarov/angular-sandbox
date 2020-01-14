@@ -9,6 +9,7 @@ import { DcPointDirective } from './dc-point.directive';
 import { FooComponent } from './foo/foo.component';
 import { BackgroundDirective } from './background.directive';
 import { MyStructuralDirective } from './my-structural.directive';
+import { SumPipe } from './sum.pipe';
 
 @NgModule({
   entryComponents: [
@@ -21,6 +22,7 @@ import { MyStructuralDirective } from './my-structural.directive';
     FooComponent,
     BackgroundDirective,
     MyStructuralDirective,
+    SumPipe,
   ],
   imports: [
     BrowserModule,

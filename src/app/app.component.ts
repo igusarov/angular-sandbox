@@ -20,6 +20,11 @@ export class AppComponent {
   items: any[] = ['a', 'b', 'c'];
   title = 'my-app';
   test = 'hallo!';
+  someObject = {
+    a: 1,
+    b: 2,
+  };
+  course = 12;
   constructor(
     private sharedData: SharedDataService,
     private componentFactoryResolver: ComponentFactoryResolver,

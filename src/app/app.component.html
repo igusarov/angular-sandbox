@@ -9,7 +9,9 @@
 <div appBackground="green">test backgrond directive</div>
 <div *appMyStructural="let item of items; let i = index; let a = doubleIndex">{{i}} {{a}} {{item}} structural directive</div>
 
-<ng-template #refToTemplate let-vasya="end">hello world {{vasya}}</ng-template>
-<ng-template *ngTemplateOutlet="refToTemplate; context: {end: 'perfect world!'}"></ng-template>
+<ng-template #refToTemplate let-lena let-vasya >hello world {{lena}} {{vasya}}</ng-template>
+<ng-template appBackground="green" *ngTemplateOutlet="refToTemplate; context: {$implicit: 'perfect world!'}"></ng-template>
+<pre>{{someObject | json}}</pre>
+<div>{{course | sum:23:45 | currency:'USD' }}</div>
 
 <router-outlet></router-outlet>
