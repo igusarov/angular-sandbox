@@ -10,6 +10,8 @@ import { FooComponent } from './foo/foo.component';
 import { BackgroundDirective } from './background.directive';
 import { MyStructuralDirective } from './my-structural.directive';
 import { SumPipe } from './sum.pipe';
+import {ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 @NgModule({
   entryComponents: [
@@ -23,10 +25,12 @@ import { SumPipe } from './sum.pipe';
     BackgroundDirective,
     MyStructuralDirective,
     SumPipe,
+    ReactiveFormsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [
     SharedDataService,

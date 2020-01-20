@@ -4,6 +4,7 @@ import {FooterComponent} from './footer/footer.component';
 import {SharedDataService} from './shared-data.service';
 import {DcPointDirective} from './dc-point.directive';
 import {FooComponent} from './foo/foo.component';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +26,7 @@ export class AppComponent {
     b: 2,
   };
   course = 12;
+  reactiveInput: FormControl = new FormControl('');
   constructor(
     private sharedData: SharedDataService,
     private componentFactoryResolver: ComponentFactoryResolver,
@@ -49,6 +51,10 @@ export class AppComponent {
     this.sharedData.someData$.subscribe((data) => {
       this.test = data;
     });
+
+    setTimeout(() => {
+      this.reactiveInput.setValue('hello!');
+    }, 1000);
   }
 
   addComponent() {

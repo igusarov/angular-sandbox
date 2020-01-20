@@ -14,4 +14,13 @@
 <pre>{{someObject | json}}</pre>
 <div>{{course | sum:23:45 | currency:'USD' }}</div>
 
+<label>
+  Reactive input
+  <input type="text" [formControl]="reactiveInput">
+</label>
+{{reactiveInput.value}}
+<br><br>
+Reactive forms:
+<app-reactive-forms></app-reactive-forms>
+
 <router-outlet></router-outlet>

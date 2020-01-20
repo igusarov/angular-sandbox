@@ -1,0 +1,30 @@
+<form [formGroup]="myForm">
+  <div>
+    <label>
+      Field one:
+      <input type="text" formControlName="one">
+    </label>
+    <label>
+      Field two:
+      <input type="text" formControlName="two">
+    </label>
+  </div>
+   <div formGroupName="additional">
+     <h3>Additional</h3>
+     <label>
+       Field one:
+       <input type="text" formControlName="one">
+     </label>
+     <label>
+       Field two:
+       <input type="text" formControlName="two">
+     </label>
+   </div>
+  <button (click)="addNewField()">One more field</button>
+  <div formArrayName="dynamic">
+    <div *ngFor="let field of dynamic.controls; let i=index">
+      <input type="text" [formControlName]="i">
+    </div>
+  </div>
+</form>
+Status: {{myForm.status}}
