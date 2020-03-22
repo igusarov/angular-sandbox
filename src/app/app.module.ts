@@ -12,6 +12,7 @@ import { MyStructuralDirective } from './my-structural.directive';
 import { SumPipe } from './sum.pipe';
 import {ReactiveFormsModule} from '@angular/forms';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { ScopeServiceComponent } from './scope-service/scope-service.component';
 
 @NgModule({
   entryComponents: [
@@ -26,11 +27,12 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
     MyStructuralDirective,
     SumPipe,
     ReactiveFormsComponent,
+    ScopeServiceComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
+    {ngModule: ReactiveFormsModule},
   ],
   providers: [
     SharedDataService,
