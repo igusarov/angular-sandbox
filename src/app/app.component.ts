@@ -5,6 +5,7 @@ import {SharedDataService} from './shared-data.service';
 import {DcPointDirective} from './dc-point.directive';
 import {FooComponent} from './foo/foo.component';
 import {FormControl} from '@angular/forms';
+import {FooBar} from './hello-world/foobar-token';
 
 @Component({
   selector: 'app-root',
@@ -31,10 +32,13 @@ export class AppComponent {
     private sharedData: SharedDataService,
     private componentFactoryResolver: ComponentFactoryResolver,
     private injector: Injector,
+    private fooBar: FooBar,
   ) {
 
     const customFooComponent = createCustomElement(FooComponent, {injector});
     customElements.define('my-custom-foo', customFooComponent);
+
+    console.log(this.fooBar);
 
     setTimeout(() => {
       this.test = 'hello world!';

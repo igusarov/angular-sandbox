@@ -13,6 +13,8 @@ import { SumPipe } from './sum.pipe';
 import {ReactiveFormsModule} from '@angular/forms';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { ScopeServiceComponent } from './scope-service/scope-service.component';
+import {HelloWorldModule} from './hello-world/hello-world.module';
+import {FooBar} from './hello-world/foobar-token';
 
 @NgModule({
   entryComponents: [
@@ -30,12 +32,17 @@ import { ScopeServiceComponent } from './scope-service/scope-service.component';
     ScopeServiceComponent,
   ],
   imports: [
+    HelloWorldModule,
     BrowserModule,
     AppRoutingModule,
     {ngModule: ReactiveFormsModule},
   ],
   providers: [
     SharedDataService,
+    {
+      provide: FooBar,
+      useValue: 'provider from root!',
+    }
   ],
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,11 @@
 import {Component, Input, OnChanges, OnInit, SimpleChange, ViewEncapsulation} from '@angular/core';
 import {SharedDataService} from '../shared-data.service';
 
+function myClassDecorator(constructor: any) {
+  console.log('class decorator:', constructor.prototype.constructor);
+};
+
+@myClassDecorator
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -8,6 +13,7 @@ import {SharedDataService} from '../shared-data.service';
   encapsulation: ViewEncapsulation.Emulated,
 })
 export class FooterComponent implements OnInit, OnChanges {
+  static HELLO: 'hello';
   @Input() foo: string;
   private bar_: string;
   public someField = 'some filed';
@@ -28,7 +34,7 @@ export class FooterComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
-    console.log(changes);
+    //console.log(changes);
   }
 
 }
